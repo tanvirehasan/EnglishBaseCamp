@@ -4,7 +4,7 @@
         <!-- ============= FOOTER ================= -->
         <footer class="footer">
 
-          <script src="../assets/js/vendor/jquery.min.js"></script>
+          <script src="../assets/js/vendor/jquery.js"></script>
           <script src="../assets/js/vendor/bootstrap.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

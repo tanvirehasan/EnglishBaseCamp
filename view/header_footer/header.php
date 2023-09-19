@@ -83,7 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="rbt-main-navigation d-none d-xl-block">
+                    <div class="main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
                                 <li class=""><a href="#">Home</a></li>
@@ -93,13 +93,6 @@
                             </ul>
                         </nav>
                     </div>
-
-                    <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="#">
-                                <span data-text="Join Now">Join Now</span>
-                            </a>
-                        </div>
 
                         <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">

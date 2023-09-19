@@ -6,7 +6,7 @@ if (isset($_POST['add_catagory'])) {
     $title      = htmlspecialchars($_POST['title']);
     $fulltext   = htmlspecialchars($_POST['full_text']);
 
-    $target_dir = "../assets/img/services/";
+    $target_dir = "../assets/images/category/image/";
     $image      = $_FILES["image"]["name"];
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -18,7 +18,7 @@ if (isset($_POST['update_catagory'])) {
 
     $fulltext = htmlspecialchars($_POST['full_text']);
     if ($_FILES["image"]["name"] != '') {
-        $target_dir = "../assets/img/services/";
+        $target_dir = "../assets/images/category/image/";
         $image = $_FILES["image"]["name"];
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -110,7 +110,7 @@ if (isset($_GET['delete_id'])) {
                         <tr>
                             <td><?= $i++ ?></td>
                             <td><?= $catagory->cat_title ?></td>
-                            <td> <img src="../assets/img/services/<?= $catagory->thamnil ?>" alt="" width="20%"> </td>
+                            <td> <img src="../assets/images/category/image/<?= $catagory->thamnil ?>" alt="" width="20%"> </td>
                             <td>
                                 <a href="catagory.php?catagory=<?= $catagory->cat_id ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                 <a href="catagory.php?delete_id=<?= $catagory->cat_id ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm text-white">Delete</a>

@@ -8,7 +8,7 @@ if (isset($_POST['add_blog'])) {
     $catg_id    = htmlspecialchars($_POST['catg_id'], ENT_QUOTES);
     $resouce    = htmlspecialchars($_POST['resouce_active'], ENT_QUOTES);
 
-    $target_dir = "../assets/img/blog/";
+    $target_dir = "../assets/images/blog/";
     $image      = $_FILES["image"]["name"];
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -19,7 +19,18 @@ if (isset($_POST['add_blog'])) {
 if (isset($_POST['update_blog'])) {
     $title    = htmlspecialchars($_POST['title'], ENT_QUOTES);
     $fulltext = htmlspecialchars($_POST['full_text'], ENT_QUOTES);
-    UpdateData('blog', "blog_title='$title', blog_catagory='{$_POST['catg_id']}', blog_text='$fulltext', resources='{$_POST['resouce_active']}' WHERE blog_id='{$_GET['blogs_id']}'");
+
+    if ($_FILES["image"]["name"] != '') {
+        $target_dir = "../assets/images/blog/";
+        $image      = $_FILES["image"]["name"];
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+    } else {
+        $image = $_POST['image2'];
+    }
+
+
+    UpdateData('blog', "blog_title='$title', blog_catagory='{$_POST['catg_id']}', blog_text='$fulltext', resources='{$_POST['resouce_active']}', blog_image='$image'  WHERE blog_id='{$_GET['blogs_id']}'");
     // Reconect('blog.php');
 }
 
@@ -50,6 +61,10 @@ if (isset($_GET['delete_id'])) {
         ?>
                 <label for="categoryname" class=" form-label" style="font-weight:700;">Title</label>
                 <input type="text" class="form-control mb-4 " name="title" value="<?= $service->blog_title ?>" require>
+
+                <label for="categoryname" class=" form-label" style="font-weight:700;">Image</label>
+                <input type="file" class="form-control mb-4 " name="image">
+                <input type="hidden" class="form-control mb-4 " name="image2" value="<?= $service->image ?>">
 
                 <div class="row">
                     <div class="col-6">
@@ -84,8 +99,6 @@ if (isset($_GET['delete_id'])) {
                                 }
 
                                 ?>
-
-
                             </option>
                             <option value="0">Blog</option>
                             <option value="1">Resource</option>
@@ -172,7 +185,7 @@ if (isset($_GET['delete_id'])) {
                             <td><?= $i++ ?></td>
                             <td><?= $blogs->blog_title ?></td>
                             <td><?= postcate('blog_cate_title', $blogs->blog_catagory) ?></td>
-                            <td style="width: 100px;"> <img src="../assets/img/blog/<?= $blogs->blog_image ?>" alt="" width="100%"> </td>
+                            <td style="width: 100px;"> <img src="../assets/images/blog/<?= $blogs->blog_image ?>" alt="" width="100%"> </td>
                             <td style="width: 150px;">
                                 <a href="blog.php?blogs_id=<?= $blogs->blog_id ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                 <a href="blog.php?delete_id=<?= $blogs->blog_id ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm text-white">Delete</a>

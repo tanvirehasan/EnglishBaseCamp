@@ -9,7 +9,7 @@ if (isset($_POST['slider_save'])) {
   $btn_text     = htmlspecialchars($_POST['btn_text']);
   $btn_url      = htmlspecialchars($_POST['btn_url']);
 
-  $target_dir = "../assets/img/banner/";
+  $target_dir = "../assets/images/banner/";
   $image      = $_FILES["image_file"]["name"];
   $target_file = $target_dir . basename($_FILES["image_file"]["name"]);
   move_uploaded_file($_FILES["image_file"]["tmp_name"], $target_file);
@@ -25,7 +25,7 @@ if (isset($_POST['slider_update'])) {
   $btn_text     = htmlspecialchars($_POST['btn_text']);
   $btn_url      = htmlspecialchars($_POST['btn_url']);
 
-  $target_dir  = "../assets/img/banner/";
+  $target_dir  = "../assets/images/banner/";
 
   if ($_FILES["image_file"]["name"] != '') {
     $image       = $_FILES["image_file"]["name"];
@@ -120,7 +120,7 @@ if (isset($_GET['delete'])) {
           <td><?= $row->short_text ?></td>
           <td><?= $row->btn_text ?></td>
           <td><?= $row->btn_url ?></td>
-          <td> <img src="../assets/img/banner/<?= $row->image_file ?>" alt="" width="100"> </td>
+          <td> <img src="../assets/images/banner/<?= $row->image_file ?>" alt="" width="100"> </td>
           <td><a href="slider.php?edit=<?= $row->slider_id ?>"">Edit</a> | <a href=" slider.php?delete=<?= $row->slider_id ?>">Delete</a></td>
         </tr>
       <?php } ?>

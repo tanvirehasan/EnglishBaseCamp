@@ -7,7 +7,7 @@ if (isset($_POST['add_service'])) {
     $fulltext   = htmlspecialchars($_POST['full_text'], ENT_QUOTES);
     $catg_id    = htmlspecialchars($_POST['catg_id'], ENT_QUOTES);
 
-    $target_dir  = "../assets/img/services/";
+    $target_dir  = "../assets/images/course/";
     $image       = $_FILES["image"]["name"];
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -26,9 +26,9 @@ if (isset($_POST['update_service'])) {
     $title      = htmlspecialchars($_POST['title'], ENT_QUOTES);
     $fulltext   = htmlspecialchars($_POST['full_text'], ENT_QUOTES);
     $catg_id    = htmlspecialchars($_POST['catg_id'], ENT_QUOTES);
-    $target_dir  = "../assets/img/services/";
+    $target_dir  = "../assets/images/course/";
 
-    if ($_FILES["image"]["name"]!='') {
+    if ($_FILES["image"]["name"] != '') {
         $image       = $_FILES["image"]["name"];
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -36,7 +36,7 @@ if (isset($_POST['update_service'])) {
         $image = $_POST['image1'];
     }
 
-    if ($_FILES["featured_image"]["name"]!='') {
+    if ($_FILES["featured_image"]["name"] != '') {
         $featured_image  = $_FILES["featured_image"]["name"];
         $target_file2     = $target_dir . basename($_FILES["featured_image"]["name"]);
         move_uploaded_file($_FILES["featured_image"]["tmp_name"], $target_file2);
@@ -47,9 +47,9 @@ if (isset($_POST['update_service'])) {
     $update = UpdateData('aa_our_services', " title='$title', full_text='$fulltext', catg_id='$catg_id', image='$image', featured_image='$featured_image'   WHERE service_id='{$_GET['service_id']}'");
     // Reconect('services.php');
 
-    if ($update==true) {
+    if ($update == true) {
         echo "success";
-    }else{
+    } else {
         echo "Error: " . $update . "<br>" . $conn->error;
     }
 }
@@ -78,7 +78,7 @@ if (isset($_GET['delete_id'])) {
         if (isset($_GET['service_id'])) {
             $teab_data = SelectData('aa_our_services', "WHERE service_id='{$_GET['service_id']}' ");
             while ($service = $teab_data->fetch_object()) { ?>
-            
+
                 <label for="categoryname" class=" form-label" style="font-weight:700;">Course Name</label>
                 <input type="text" class="form-control mb-4 " name="title" value="<?= $service->title ?>">
                 <div class="row">
@@ -95,15 +95,15 @@ if (isset($_GET['delete_id'])) {
                     </div>
                     <div class="col-md-6">
                         <label for="categoryname" class=" form-label" style="font-weight:700;">Thumbnail</label><br>
-                        <img src="../assets/img/services/<?= $service->image ?>" alt="">
-                        <input type="file" class="form-control my-3 " name="image">
-                        <input type="text" value="<?php echo $service->image?>" name="image1" hidden>
+                        <img src="../assets/images/course/<?= $service->image ?>" alt="" style="width: 100%;">
+                        <input type="file" class="form-control" name="image">
+                        <input type="text" value="<?php echo $service->image ?>" name="image1" hidden>
                     </div>
                     <div class="col-md-6">
                         <label for="categoryname" class=" form-label" style="font-weight:700;">Featured Image</label><br>
-                        <img src="../assets/img/services/<?= $service->featured_image ?>" alt="" style="width: 100%;">
+                        <img src="../assets/images/course/<?= $service->featured_image ?>" alt="" style="width: 100%;">
                         <input type="file" class="form-control mb-4 " name="featured_image">
-                        <input type="text" value="<?php echo $service->featured_image?>" name="image2" hidden>
+                        <input type="text" value="<?php echo $service->featured_image ?>" name="image2" hidden>
 
                     </div>
                 </div>
@@ -111,43 +111,43 @@ if (isset($_GET['delete_id'])) {
                 <textarea class="form-control" id="texteditro" name="full_text"> <?= html_entity_decode($service->full_text) ?></textarea>
                 <div class="float-right my-3">
                     <button type="submit" name="update_service" class="btn btn-primary"> Update</button>
-                </div>        
+                </div>
 
 
-<?PHP }
+            <?PHP }
         } else { ?>
-<div class="newservices">
-    <label for="categoryname" class=" form-label" style="font-weight:700;">Course Name</label>
-    <input type="text" class="form-control mb-4 " name="title" require>
+            <div class="newservices">
+                <label for="categoryname" class=" form-label" style="font-weight:700;">Course Name</label>
+                <input type="text" class="form-control mb-4 " name="title" require>
 
-    <div class="row">
-        <div class="col-md-6">
-            <label for="categoryname" class=" form-label" style="font-weight:700;">Course Catagory</label>
-            <select class="form-control mb-4 " name="catg_id" id="">
-                <option>Select</option>
-                <?php
-                $teab_data = SelectData('catagory', "");
-                while ($catagorys = $teab_data->fetch_object()) { ?>
-                    <option value="<?= $catagorys->cat_id ?>"><?= $catagorys->cat_title ?></option>
-                <?php } ?>
-            </select>
-        </div>
-        <div class="col-md-3">
-            <label for="categoryname" class=" form-label" style="font-weight:700;">Thumbnail</label>
-            <input type="file" class="form-control mb-4 " name="image">
-        </div>
-        <div class="col-md-3">
-            <label for="categoryname" class=" form-label" style="font-weight:700;">Featured Image</label>
-            <input type="file" class="form-control mb-4 " name="featured_image">
-        </div>
-    </div>
-    <label for="categoryname" class="form-label pb-2" style="font-weight:700;">Text</label>
-    <textarea class="form-control" id="texteditro" name="full_text" require></textarea>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="categoryname" class=" form-label" style="font-weight:700;">Course Catagory</label>
+                        <select class="form-control mb-4 " name="catg_id" id="">
+                            <option>Select</option>
+                            <?php
+                            $teab_data = SelectData('catagory', "");
+                            while ($catagorys = $teab_data->fetch_object()) { ?>
+                                <option value="<?= $catagorys->cat_id ?>"><?= $catagorys->cat_title ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="categoryname" class=" form-label" style="font-weight:700;">Thumbnail</label>
+                        <input type="file" class="form-control mb-4 " name="image">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="categoryname" class=" form-label" style="font-weight:700;">Featured Image</label>
+                        <input type="file" class="form-control mb-4 " name="featured_image">
+                    </div>
+                </div>
+                <label for="categoryname" class="form-label pb-2" style="font-weight:700;">Text</label>
+                <textarea class="form-control" id="texteditro" name="full_text" require></textarea>
 
-    <div class="float-right my-3"><button type="submit" name="add_service" class="btn btn-primary"> Submit</button></div>
-</div>
-<?php } ?>
-</form>
+                <div class="float-right my-3"><button type="submit" name="add_service" class="btn btn-primary"> Submit</button></div>
+            </div>
+        <?php } ?>
+    </form>
 </div>
 
 
@@ -177,7 +177,7 @@ if (isset($_GET['delete_id'])) {
                         <tr>
                             <td><?= $i++ ?></td>
                             <td><?= $service->title ?></td>
-                            <td> <img src="../assets/img/services/<?= $service->image ?>" alt="" width="20%"> </td>
+                            <td> <img src="../assets/images/course/<?= $service->image ?>" alt="" width="20%"> </td>
                             <td>
                                 <a href="services.php?service_id=<?= $service->service_id ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                 <a href="services.php?delete_id=<?= $service->service_id ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm text-white">Delete</a>
