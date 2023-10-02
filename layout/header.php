@@ -187,12 +187,12 @@
                                         <i class="icon-2"></i>
                                     </a>
                                 </li>
-                                <li class="icon cart-icon">
+                                <!-- <li class="icon cart-icon">
                                     <a href="cart.html" class="cart-icon">
                                         <i class="icon-3"></i>
                                         <span class="count">0</span>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="header-btn">
                                     <a href="contact-us.html" class="edu-btn btn-medium">Get Started <i class="icon-4"></i></a>
                                 </li>
