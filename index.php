@@ -5,67 +5,63 @@
 <!--=====================================-->
 <div class="hero-banner hero-style-1">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="banner-content">
-                    <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">Get <span class="color-secondary">2500+</span> <br>Best Online Courses From EduBlink</h1>
-                    <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.</p>
-                    <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
-                        <a href="course-one.html" class="edu-btn">Find courses <i class="icon-4"></i></a>
-                    </div>
-                    <ul class="shape-group">
-                        <li class="shape-1 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="2" src="assets/images/about/shape-13.png" alt="Shape">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="banner-thumbnail">
-                    <div class="thumbnail" data-sal-delay="500" data-sal="slide-left" data-sal-duration="1000">
-                        <img src="assets/images/banner/girl-1.webp" alt="Girl Image">
-                    </div>
-                    <div class="instructor-info" data-sal-delay="600" data-sal="slide-up" data-sal-duration="1000">
-                        <div class="inner">
-                            <h5 class="title">Instrunctor</h5>
-                            <div class="media">
-                                <div class="thumb">
-                                    <img src="assets/images/banner/author-1.png" alt="Images">
-                                </div>
-                                <div class="content">
-                                    <span>200+</span> Instactors
-                                </div>
-                            </div>
+
+        <?php
+        $data = SelectData('a_slider', '');
+        while ($row = $data->fetch_object()) { ?>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="banner-content">
+                        <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000"><?= $row->slider_title ?></h1>
+                        <p data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000"><?= $row->short_text ?></p>
+                        <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                            <a href="<?= $row->btn_url ?>" class="edu-btn"><?= $row->btn_text ?> <i class="icon-4"></i></a>
                         </div>
+                        <ul class="shape-group">
+                            <li class="shape-1 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="2" src="assets/images/about/shape-13.png" alt="Shape">
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="shape-group">
-                        <li class="shape-1" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="1.5" src="assets/images/about/shape-15.png" alt="Shape">
-                        </li>
-                        <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="-1.5" src="assets/images/about/shape-16.png" alt="Shape">
-                        </li>
-                        <li class="shape-3 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <span data-depth="3" class="circle-shape"></span>
-                        </li>
-                        <li class="shape-4" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="-1" src="assets/images/counterup/shape-02.png" alt="Shape">
-                        </li>
-                        <li class="shape-5 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="1.5" src="assets/images/about/shape-13.png" alt="Shape">
-                        </li>
-                        <li class="shape-6 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                            <img data-depth="-2" src="assets/images/about/shape-18.png" alt="Shape">
-                        </li>
-                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-thumbnail">
+                        <div class="thumbnail" data-sal-delay="500" data-sal="slide-left" data-sal-duration="1000">
+                            <img src="assets/images/banner/girl-1.webp" alt="Girl Image">
+                        </div>
+
+                        <ul class="shape-group">
+                            <li class="shape-1" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="1.5" src="assets/images/about/shape-15.png" alt="Shape">
+                            </li>
+                            <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="-1.5" src="assets/images/about/shape-16.png" alt="Shape">
+                            </li>
+                            <li class="shape-3 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <span data-depth="3" class="circle-shape"></span>
+                            </li>
+                            <li class="shape-4" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="-1" src="assets/images/counterup/shape-02.png" alt="Shape">
+                            </li>
+                            <li class="shape-5 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="1.5" src="assets/images/about/shape-13.png" alt="Shape">
+                            </li>
+                            <li class="shape-6 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                                <img data-depth="-2" src="assets/images/about/shape-18.png" alt="Shape">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
     </div>
     <div class="shape-7">
         <img src="assets/images/about/h-1-shape-01.png" alt="Shape">
     </div>
 </div>
+
+
+
 <!--=====================================-->
 <!--=       Features Area Start      =-->
 <!--=====================================-->
@@ -116,128 +112,29 @@
 <div class="edu-categorie-area categorie-area-2 edu-section-gap">
     <div class="container">
         <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-            <h2 class="title">Top Categories</h2>
+            <h2 class="title">Test Prep</h2>
             <span class="shape-line"><i class="icon-19"></i></span>
-            <p>Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore</p>
+            <p>Test prep training by Experts for your Study Abroad journey</p>
         </div>
 
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-primary-style edublink-svg-animate">
-                    <div class="icon">
-                        <i class="icon-9"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Business Management</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $teab_data = SelectData('aa_our_services', "WHERE catg_id='5'");
+            while ($cours = $teab_data->fetch_object()) { ?>
 
-            <div class="col-lg-4 col-md-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-secondary-style">
-                    <div class="icon">
-                        <i class="icon-10 art-design"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Arts & Design</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra01-style">
-                    <div class="icon">
-                        <i class="icon-11 personal-development"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Personal Development</h5>
-                        </a>
+                <div class="col-lg-4 col-md-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                    <div class="categorie-grid categorie-style-2 color-primary-style edublink-svg-animate">
+                        <div class="icon">
+                            <i class="icon-9"></i>
+                        </div>
+                        <div class="content">
+                            <a href="course-one.php?id=<?= $cours->title ?>">
+                                <h5 class="title"><?= $cours->title ?></h5>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-tertiary-style">
-                    <div class="icon">
-                        <i class="icon-12 health-fitness"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Health & Fitness</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra02-style">
-                    <div class="icon">
-                        <i class="icon-13 data-science"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Data Science</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra03-style">
-                    <div class="icon">
-                        <i class="icon-14"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Marketing</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra04-style">
-                    <div class="icon">
-                        <i class="icon-15"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Business & Finance</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra05-style">
-                    <div class="icon">
-                        <i class="icon-16 computer-science"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Computer Science</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                <div class="categorie-grid categorie-style-2 color-extra06-style">
-                    <div class="icon">
-                        <i class="icon-17 video-photography"></i>
-                    </div>
-                    <div class="content">
-                        <a href="course-one.html">
-                            <h5 class="title">Video & Photography</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </div>
@@ -250,7 +147,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
                 <div class="about-image-gallery">
-                    <img class="main-img-1" src="assets/images/about/about-01.webp" alt="About Image">
+                    <img class="main-img-1" src="assets/images/about/<?= About_Us('about_image') ?>" alt="About Image">
                     <div class="video-box" data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">
                         <div class="inner">
                             <div class="thumb">
@@ -293,15 +190,12 @@
                 <div class="about-content">
                     <div class="section-title section-left">
                         <span class="pre-title">About Us</span>
-                        <h2 class="title">Learn & Grow Your Skills From <span class="color-secondary">Anywhere</span></h2>
-                        <span class="shape-line"><i class="icon-19"></i></span>
-                        <p>Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod ex tempor incididunt labore dolore magna aliquaenim minim veniam quis nostrud exercitation ullamco laboris.</p>
+                        <p><?php
+                            $postcontent = html_entity_decode(About_Us('about_text'));
+                            $content = strip_tags($postcontent);
+                            echo mb_strimwidth($content, 0, 406, "..."); ?></p>
                     </div>
-                    <ul class="features-list">
-                        <li>Expert Trainers</li>
-                        <li>Online Remote Learning</li>
-                        <li>Lifetime Access</li>
-                    </ul>
+
                 </div>
             </div>
         </div>
@@ -808,111 +702,44 @@
 <div class="edu-team-area team-area-1 gap-tb-text">
     <div class="container">
         <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-            <span class="pre-title">Instructors</span>
+            <span class="pre-title">Our Team</span>
             <h2 class="title">Course Instructors</h2>
             <span class="shape-line"><i class="icon-19"></i></span>
         </div>
         <div class="row g-5">
-            <!-- Start Instructor Grid  -->
-            <div class="col-lg-3 col-sm-6 col-12" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-team-grid team-style-1">
-                    <div class="inner">
-                        <div class="thumbnail-wrap">
-                            <div class="thumbnail">
-                                <a href="team-details.html">
-                                    <img src="assets/images/team/team-01.webp" alt="team images">
-                                </a>
+
+
+            <?php
+            $team_data = SelectData('our_team', "ORDER BY tid DESC;");
+            while ($teams = $team_data->fetch_object()) { ?>
+
+                <!-- Start Instructor Grid  -->
+                <div class="col-lg-3 col-sm-6 col-12" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                    <div class="edu-team-grid team-style-1">
+                        <div class="inner">
+                            <div class="thumbnail-wrap">
+                                <div class="thumbnail">
+                                    <a href="team-details.html">
+                                        <img src="assets/images/team/<?= $teams->profile_photos ?>" alt="team images">
+                                    </a>
+                                </div>
+                                <ul class="team-share-info">
+                                    <li><a href="#"><i class="icon-share-alt"></i></a></li>
+                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                                </ul>
                             </div>
-                            <ul class="team-share-info">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5 class="title"><a href="team-details.html">Jane Seymour</a></h5>
-                            <span class="designation">UI Designer</span>
+                            <div class="content">
+                                <h5 class="title"><a href="team-details.php?id=<?= $teams->tname ?>"><?= $teams->tname ?></a></h5>
+                                <span class="designation"><?= $teams->dasinaton ?></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Instructor Grid  -->
-            <!-- Start Instructor Grid  -->
-            <div class="col-lg-3 col-sm-6 col-12" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-team-grid team-style-1">
-                    <div class="inner">
-                        <div class="thumbnail-wrap">
-                            <div class="thumbnail">
-                                <a href="team-details.html">
-                                    <img src="assets/images/team/team-02.webp" alt="team images">
-                                </a>
-                            </div>
-                            <ul class="team-share-info">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5 class="title"><a href="team-details.html">Edward Norton</a></h5>
-                            <span class="designation">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Instructor Grid  -->
-            <!-- Start Instructor Grid  -->
-            <div class="col-lg-3 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-team-grid team-style-1">
-                    <div class="inner">
-                        <div class="thumbnail-wrap">
-                            <div class="thumbnail">
-                                <a href="team-details.html">
-                                    <img src="assets/images/team/team-03.webp" alt="team images">
-                                </a>
-                            </div>
-                            <ul class="team-share-info">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5 class="title"><a href="team-details.html">Penelope Cruz</a></h5>
-                            <span class="designation">Digital Marketer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Instructor Grid  -->
-            <!-- Start Instructor Grid  -->
-            <div class="col-lg-3 col-sm-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-team-grid team-style-1">
-                    <div class="inner">
-                        <div class="thumbnail-wrap">
-                            <div class="thumbnail">
-                                <a href="team-details.html">
-                                    <img src="assets/images/team/team-04.webp" alt="team images">
-                                </a>
-                            </div>
-                            <ul class="team-share-info">
-                                <li><a href="#"><i class="icon-share-alt"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5 class="title"><a href="team-details.html">John Travolta</a></h5>
-                            <span class="designation">WordPress Expert</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Instructor Grid  -->
+                <!-- End Instructor Grid  -->
+            <?php } ?>
+
         </div>
     </div>
 </div>
@@ -950,6 +777,58 @@
     </div>
 </div>
 <!-- End Ad Banner Area  -->
+
+
+
+<!--=====================================-->
+<!--=       Course Area Start      		=-->
+<!--=====================================-->
+<!-- Start Course Area  -->
+<div class="edu-course-area course-area-1 edu-section-gap bg-lighten01">
+    <div class="container">
+        <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <span class="pre-title">Study Abroad</span>
+            <h2 class="title">Select Your Dream Destination</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+
+            <?php
+            $teab_data = SelectData('aa_our_services', "WHERE catg_id='6'");
+            while ($cours = $teab_data->fetch_object()) { ?>
+                <!-- Start Single Course  -->
+                <div class="col-md-4 col-xl-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="edu-course course-style-1 hover-button-bg-white">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="course-details.html">
+                                    <img src="assets/images/course/<?= $cours->image ?>" alt="Course Meta">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title">
+                                    <a href="#"><?= $cours->title ?></a>
+                                </h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <!-- End Single Course  -->
+        </div>
+        <div class="course-view-all" data-sal-delay="150" data-sal="slide-up" data-sal-duration="1200">
+            <a href="course-one.html" class="edu-btn">Browse more courses <i class="icon-4"></i></a>
+        </div>
+    </div>
+</div>
+<!-- End Course Area -->
+
+
+
+
+
 <!--=====================================-->
 <!--=      		Brand Area Start   		=-->
 <!--=====================================-->
@@ -969,30 +848,13 @@
             </div>
             <div class="col-lg-7">
                 <div class="brand-grid-wrap">
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-01.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-02.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-03.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-04.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-05.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-06.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-07.png" alt="Brand Logo">
-                    </div>
-                    <div class="brand-grid">
-                        <img src="assets/images/brand/brand-08.png" alt="Brand Logo">
-                    </div>
+                    <?php
+                    $data = SelectData('our_clients', 'limit 8');
+                    while ($row = $data->fetch_object()) { ?>
+                        <div class="brand-grid">
+                            <img src="assets/images/brand/<?= $row->client_logo ?>" alt="<?= $row->client_logo ?>">
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -1007,91 +869,50 @@
     <div class="container">
         <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
             <span class="pre-title">Latest Articles</span>
-            <h2 class="title">Get News with EduBlink</h2>
+            <h2 class="title">Get News with English BaseCamp</h2>
             <span class="shape-line"><i class="icon-19"></i></span>
         </div>
         <div class="row g-5">
-            <!-- Start Blog Grid  -->
-            <div class="col-lg-4 col-md-6 col-12" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-blog blog-style-1">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="blog-details.html">
-                                <img src="assets/images/blog/blog-01.jpg" alt="Blog Images">
-                            </a>
-                        </div>
-                        <div class="content position-top">
-                            <div class="read-more-btn">
-                                <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
+
+            <?php
+            $blog_data = SelectData('blog', "WHERE resources='0' ORDER BY blog_id DESC limit 3");
+            while ($blogs = $blog_data->fetch_object()) { ?>
+                <!-- Start Blog Grid  -->
+                <div class="col-lg-4 col-md-6 col-12" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                    <div class="edu-blog blog-style-1">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="assets/images/blog/<?= $blogs->blog_image ?>" alt="<?= $blogs->blog_title ?>">
+                                </a>
                             </div>
-                            <div class="category-wrap">
-                                <a href="#" class="blog-category">ONLINE</a>
+                            <div class="content position-top">
+                                <div class="read-more-btn">
+                                    <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
+                                </div>
+                                <div class="category-wrap">
+                                    <a href="#" class="blog-category"><?= postcate('blog_cate_title', $blogs->blog_catagory) ?></a>
+                                </div>
+                                <h5 class="title"><a href="blog-details.php"><?= $blogs->blog_title ?></a></h5>
+                                <ul class="blog-meta">
+                                    <li><i class="icon-27"></i><?= date('F d, Y', strtotime($blogs->blog_date_time)) ?></li>
+                                    <!-- <li><i class="icon-28"></i>Com 09</li> -->
+                                </ul>
+                                <p><?php
+                                    $blog_content = html_entity_decode($blogs->blog_text);
+                                    $blog_text = strip_tags($blog_content);
+                                    echo mb_strimwidth($blog_text, 0, 70, ".");
+                                    ?></p>
                             </div>
-                            <h5 class="title"><a href="blog-details.html">Become a Better Blogger: Content Planning</a></h5>
-                            <ul class="blog-meta">
-                                <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                <li><i class="icon-28"></i>Com 09</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog Grid  -->
-            <!-- Start Blog Grid  -->
-            <div class="col-lg-4 col-md-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-blog blog-style-1">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="blog-details.html">
-                                <img src="assets/images/blog/blog-02.jpg" alt="Blog Images">
-                            </a>
-                        </div>
-                        <div class="content position-top">
-                            <div class="read-more-btn">
-                                <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
-                            </div>
-                            <div class="category-wrap">
-                                <a href="#" class="blog-category">LECTURE</a>
-                            </div>
-                            <h5 class="title"><a href="blog-details.html">How to Keep Workouts Fresh in the Morning</a></h5>
-                            <ul class="blog-meta">
-                                <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                <li><i class="icon-28"></i>Com 09</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed do eiusmod ux tempor incid idunt labore dol oremagna aliqua.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Blog Grid  -->
-            <!-- Start Blog Grid  -->
-            <div class="col-lg-4 col-md-6 col-12" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-blog blog-style-1">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="blog-details.html">
-                                <img src="assets/images/blog/blog-03.jpg" alt="Blog Images">
-                            </a>
-                        </div>
-                        <div class="content position-top">
-                            <div class="read-more-btn">
-                                <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
-                            </div>
-                            <div class="category-wrap">
-                                <a href="#" class="blog-category">BUSINESS</a>
-                            </div>
-                            <h5 class="title"><a href="blog-details.html">Four Ways to Keep Your Workout Routine Fresh</a></h5>
-                            <ul class="blog-meta">
-                                <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                <li><i class="icon-28"></i>Com 09</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed do eiusmod ux tempor incid idunt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog Grid  -->
+                <!-- End Blog Grid  -->
+            <?php } ?>
+
+
+
+
         </div>
     </div>
     <ul class="shape-group">

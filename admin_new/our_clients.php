@@ -7,7 +7,7 @@ if (isset($_POST['add_client'])) {
     $client_logo        = htmlspecialchars($_FILES['client_logo']['name']);
     $short_text         = htmlspecialchars($_POST['short_text']);
 
-    $target_dir = "../assets/img/brand/";
+    $target_dir = "../assets/images/brand/";
     $target_file = $target_dir . basename($_FILES["client_logo"]["name"]);
     move_uploaded_file($_FILES["client_logo"]["tmp_name"], $target_file);
     InsertData('our_clients', "client_name, client_catagory, client_logo, short_text", "'$client_name', '$client_catagory','$client_logo','$short_text'");
@@ -16,12 +16,12 @@ if (isset($_POST['add_client'])) {
 if (isset($_POST['update_team'])) {
     $fulltext = htmlspecialchars($_POST['profile_text']);
     UpdateData('our_clients', "tname='{$_POST['tname']}', dasinaton='{$_POST['dasinaton']}', profile_text='$fulltext' WHERE tid='{$_GET['tid']}'");
-    Reconect('team.php');
+    Reconect('our_clients.php');
 }
 
 if (isset($_GET['delete_id'])) {
-    mysqli_query($conn, "DELETE FROM aa_our_services WHERE service_id='{$_GET['delete_id']}'");
-    Reconect('team.php');
+    mysqli_query($conn, "DELETE FROM our_clients WHERE id='{$_GET['delete_id']}'");
+    Reconect('our_clients.php');
 }
 ?>
 
@@ -40,7 +40,7 @@ if (isset($_GET['delete_id'])) {
     <form method="POST" action="" enctype="multipart/form-data">
         <?php
         if (isset($_GET['tid'])) {
-            $teab_data = SelectData('our_team', "WHERE tid='{$_GET['tid']}' ");
+            $teab_data = SelectData('our_clients', "WHERE id='{$_GET['tid']}' ");
             while ($team_data = $teab_data->fetch_object()) {
         ?>
                 <label for="categoryname" class=" form-label" style="font-weight:700;">Name</label>
@@ -119,10 +119,10 @@ if (isset($_GET['delete_id'])) {
                         <tr>
                             <td><?= $i++ ?></td>
                             <td><?= $client_datas->client_name ?></td>
-                            <td><img src="../assets/img/brand/<?=$client_datas->client_logo?>" alt="" width="20%"></td>
+                            <td><img src="../assets/images/brand/<?= $client_datas->client_logo ?>" alt="" width="20%"></td>
                             <td>
-                                <a href="team.php?tid=<?= $client_datas->id ?>" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <a href="team.php?tid=<?= $client_datas->id ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm text-white">Delete</a>
+                                <a href="our_clients.php?tid=<?= $client_datas->id ?>" class="btn btn-warning btn-sm text-white">Edit</a>
+                                <a href="our_clients.php?delete_id=<?= $client_datas->id ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm text-white">Delete</a>
                             </td>
                         </tr>
 

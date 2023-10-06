@@ -78,7 +78,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner text-center">
-                        <p>Copyright 2023 <a href="https://1.envato.market/5bQ022" target="_blank">EduBlink</a> Designed By <a href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved</p>
+                        <p>Copyright 2023 <a href="#" target="_blank">Base Camp</a> Designed By <a href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>

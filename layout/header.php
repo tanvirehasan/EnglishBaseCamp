@@ -1,3 +1,5 @@
+<?php require_once "controller/config/functions.php" ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -5,7 +7,7 @@
     <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EduBlink | Online Education Platform</title>
+    <title>Base Camp - English & Global Study Base Camp Pvt Ltd</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->

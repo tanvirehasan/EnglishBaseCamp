@@ -2,12 +2,25 @@
 include "layout/header.php";
 if (isset($_POST['add_team'])) {
     $fulltext = htmlspecialchars($_POST['profile_text']);
-    InsertData('our_team', "tname, dasinaton, profile_text, profile_photos", "'{$_POST['tname']}', '{$_POST['dasinaton']}','$fulltext','{$_FILES['profile_photos']['name']}'");
+
+    $target_dir = "../assets/images/team/";
+    $image      = $_FILES["profile_photos"]["name"];
+    $target_file = $target_dir . basename($_FILES["profile_photos"]["name"]);
+    move_uploaded_file($_FILES["profile_photos"]["tmp_name"], $target_file);
+    InsertData('our_team', "tname, dasinaton, profile_text, profile_photos", "'{$_POST['tname']}', '{$_POST['dasinaton']}','$fulltext','$image'");
 }
 
 if (isset($_POST['update_team'])) {
     $fulltext = htmlspecialchars($_POST['profile_text']);
-    UpdateData('our_team', "tname='{$_POST['tname']}', dasinaton='{$_POST['dasinaton']}', profile_text='$fulltext' WHERE tid='{$_GET['tid']}'");
+    if ($_FILES["profile_photos"]["name"] != '') {
+        $target_dir = "../assets/images/team/";
+        $image      = $_FILES["profile_photos"]["name"];
+        $target_file = $target_dir . basename($_FILES["profile_photos"]["name"]);
+        move_uploaded_file($_FILES["profile_photos"]["tmp_name"], $target_file);
+    } else {
+        $image      = $_POST['profile_photos2'];
+    }
+    UpdateData('our_team', "tname='{$_POST['tname']}', dasinaton='{$_POST['dasinaton']}', profile_text='$fulltext', profile_photos='$image' WHERE tid='{$_GET['tid']}'");
     Reconect('team.php');
 }
 
@@ -43,6 +56,8 @@ if (isset($_GET['delete_id'])) {
 
                 <label for="categoryname" class=" form-label" style="font-weight:700;">Profile Photo</label>
                 <input type="file" class="form-control mb-4 " name="profile_photos" value="<?= $team_data->profile_photos ?>">
+                <input type="hidden" class="form-control mb-4 " name="profile_photos2" value="<?= $team_data->profile_photos ?>">
+
 
                 <label for="categoryname" class="form-label pb-2" style="font-weight:700;">Text & Link</label>
                 <textarea class="form-control" id="texteditro" name="profile_text"><?= $team_data->profile_text ?></textarea>
